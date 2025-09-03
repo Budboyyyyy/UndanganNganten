@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Undangan Pernikahan – [Budi & Lisa]</title>
+    <meta
+      name="description"
+      content="Undangan pernikahan [Budi & Lisa] pada [17 September 2025]. Kehadiran Anda sangat berarti."
+    />
+    <meta property="og:title" content="Undangan Pernikahan – [Budi & Lisa]" />
+    <meta property="og:description" content="Kehadiran Anda sangat berarti." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/cover.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #faf7f2; /* ganti tema di sini */
+        --card: #ffffff;
+        --ink: #2b2b2b;
+        --muted: #6b6b6b;
+        --brand: #9c6b4e; /* aksen warna */
+        --brand-2: #c7a17a;
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      header.hero {
+        position: relative;
+        min-height: 90dvh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+          ),
+          url("images/cover.jpg") center/cover no-repeat;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero .title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 6vw, 4rem);
+        letter-spacing: 0.02em;
+        margin: 0;
+      }
+      .hero .names {
+        font-size: clamp(1.1rem, 2.2vw, 1.25rem);
+        opacity: 0.95;
+        margin-top: 0.75rem;
+      }
+      .hero .date {
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding: 24px;
+      }
+      nav.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
+      }
+      nav.sticky .inner {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+      }
+      nav.sticky a {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid #eee;
+        color: #333;
+        font-size: 0.95rem;
+      }
+      section {
+        padding: 56px 0;
+      }
+      h2.section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.4rem, 3.4vw, 2rem);
+        margin: 0 0 18px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 0 0 14px;
+      }
+
+      .couple {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .person {
+        padding: 18px;
+        text-align: center;
+      }
+      .avatar {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 12px;
+        border: 4px solid #fff;
+        box-shadow: var(--shadow);
+      }
+      .person h3 {
+        margin: 0.25rem 0;
+        font-family: "Playfair Display", serif;
+      }
+      .person .meta {
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .dd {
+        background: #404040;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 12px 16px;
+        min-width: 72px;
+      }
+      .dd b {
+        display: block;
+        font-size: 1.25rem;
+      }
+      .dd span {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      .events {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .events .event {
+        padding: 18px;
+        border: 1px solid #eee;
+      }
+      .event h3 {
+        margin: 0.35rem 0;
+        font-family: "Playfair Display", serif;
+      }
+      .event .info {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .map {
+        aspect-ratio: 16/9;
+        border: 0;
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .gift {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .gift .item {
+        padding: 16px;
+        border: 1px dashed #e2e2e2;
+        border-radius: 12px;
+      }
+      .gift .acc {
+        font-family: monospace;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        background: #fff;
+        cursor: pointer;
+      }
+      .btn.primary {
+        background: var(--brand);
+        color: #fff;
+        border-color: var(--brand);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+      }
+      .gallery img {
+        border-radius: 12px;
+      }
+
+      .guestbook {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .guestbook input,
+      .guestbook textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font: inherit;
+      }
+      .guestbook-list {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+      }
+      .ucapan {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 12px;
+      }
+      .ucapan b {
+        display: block;
+      }
+
+      footer {
+        padding: 32px 0;
+        color: #888;
+        text-align: center;
+      }
+
+      .floating {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        display: grid;
+        gap: 10px;
+        z-index: 60;
+      }
+      .floating .fab {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        box-shadow: var(--shadow);
+        background: var(--brand);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* simple fade */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: fadeUp 0.8s ease forwards;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .delay-1 {
+        animation-delay: 0.15s;
+      }
+      .delay-2 {
+        animation-delay: 0.3s;
+      }
+      .delay-3 {
+        animation-delay: 0.45s;
+      }
+
+      @media (max-width: 720px) {
+        .couple {
+          grid-template-columns: 1fr;
+        }
+        nav.sticky a {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Hero ===== -->
+    <header class="hero">
+      <div class="wrap">
+        <p
+          class="fade-up"
+          style="letter-spacing: 0.3em; text-transform: uppercase"
+        >
+          Undangan Pernikahan
+        </p>
+        <h1 class="title fade-up delay-1">[Budi] &amp; [Lisa]</h1>
+        <p class="names fade-up delay-2">
+          Kami mengundang Anda untuk hadir dalam hari bahagia kami
+        </p>
+        <p class="date fade-up delay-3">
+          [Rabu, 17 September 2025] • [Pukul 10.00 WITA]
+        </p>
+        <div
+          class="countdown fade-up"
+          id="countdown"
+          aria-label="Hitung mundur ke acara"
+        ></div>
+      </div>
+    </header>
+
+    <!-- ===== Sticky Nav ===== -->
+    <nav class="sticky" aria-label="Navigasi bagian">
+      <div class="inner wrap">
+        <a href="#mempelai">Mempelai</a>
+        <a href="#acara">Acara</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#hadiah">Hadiah</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#ucapan">Ucapan</a>
+      </div>
+    </nav>
+
+    <!-- ===== Couple ===== -->
+    <section id="mempelai">
+      <div class="wrap">
+        <div class="card">
+          <div class="wrap">
+            <h2 class="section-title">Mempelai</h2>
+            <p class="lead">
+              Dengan segala kerendahan hati, kami bermaksud mengundang
+              Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami.
+            </p>
+            <div class="couple">
+              <div class="person">
+                <img
+                  class="avatar"
+                  src="images/budi.jpg"
+                  alt="Foto mempelai pria"
+                  loading="lazy"
+                />
+                <h3>[Budi]</h3>
+                <div class="meta">Putra dari Bapak [Budi] & Ibu [Budi]</div>
+                <div class="meta">@[Mhank_Budiarta]</div>
+              </div>
+              <div class="person">
+                <img
+                  class="avatar"
+                  src="images/Lisa.jpeg"
+                  alt="Foto mempelai wanita"
+                  loading="lazy"
+                />
+                <h3>[Lisa]</h3>
+                <div class="meta">
+                  Putri dari Bapak [Marco Brüschweiler] & Ibu [Chitthip
+                  Brüschweiler]
+                </div>
+                <div class="meta">@[Lalalalisa_m]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Events ===== -->
+    <section id="acara">
+      <div class="wrap">
+        <h2 class="section-title">Rangkaian Acara</h2>
+        <div class="events">
+          <div class="card event">
+            <h3>Akad Nikah</h3>
+            <div class="info">Rabu, 17 September 2025 • 10.00 WITA</div>
+            <div class="info">
+              Ditempat, [Desa Karambua 1, Kecamatan Wotu, Kabupaten Luwu Timur.]
+            </div>
+          </div>
+          <div class="card event">
+            <h3>Resepsi</h3>
+            <div class="info">Rabu, 17 September 2025 • 19.00–21.00 WITA</div>
+            <div class="info">
+              Ditempat, [Desa Karambua 1, Kecamatan Wotu, Kabupaten Luwu Timur.]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Location / Map ===== -->
+    <section id="lokasi">
+      <div class="wrap">
+        <div class="card">
+          <div class="wrap">
+            <h2 class="section-title">Lokasi</h2>
+            <p class="lead">
+              Silakan gunakan peta di bawah untuk panduan arah.
+            </p>
+            <!-- Ganti src embed maps dengan lokasi Anda -->
+            <iframe
+              class="map"
+              title="Peta lokasi"
+              loading="lazy"
+              allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4042.5257613467847!2d120.86133970459183!3d-2.572535604637329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sid!2sid!4v1756883559278!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RSVP ===== -->
+    <section id="rsvp">
+      <div class="wrap">
+        <div class="card">
+          <div class="wrap">
+            <h2 class="section-title">Konfirmasi Kehadiran (RSVP)</h2>
+            <p class="lead">
+              Anda bisa isi formulir di bawah atau langsung chat WhatsApp.
+            </p>
+
+            <!-- Opsi 1: Form sederhana (gunakan Formspree / backend Anda) -->
+            <form class="guestbook" id="rsvpForm" action="#" method="post">
+              <input name="nama" placeholder="Nama" required />
+              <input
+                name="jumlah"
+                type="number"
+                min="1"
+                placeholder="Jumlah Tamu"
+                required
+              />
+              <textarea
+                name="pesan"
+                rows="3"
+                placeholder="Ucapan / catatan (opsional)"
+              ></textarea>
+              <button class="btn primary" type="submit">Kirim RSVP</button>
+              <button class="btn" type="button" id="btnWa">Via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Gift ===== -->
+    <section id="hadiah">
+      <div class="wrap">
+        <h2 class="section-title">Kado</h2>
+        <p class="lead">
+          Tanpa mengurangi rasa hormat, bagi yang ingin mengirim kado dapat
+          melalui rekening berikut:
+        </p>
+        <div class="gift">
+          <div class="card item">
+            <h3>Transfer Bank</h3>
+            <div class="acc">
+              <span>BRI • 1234 5678 9012 345 • a.n. [Budi]</span>
+              <button class="btn" data-copy="123456789012345">Salin</button>
+            </div>
+          </div>
+          <div class="card item">
+            <h3>E-Wallet</h3>
+            <div class="acc">
+              <span>DANA • 0812-xxxx-xxxx • a.n. [Budi]</span>
+              <button class="btn" data-copy="0812xxxxxxxx">Salin</button>
+            </div>
+          </div>
+          <div class="card item">
+            <h3>Desa Karambua 1, Kecamatan Wotu, Kabupaten Luwu Timur</h3>
+            <p>[Jalan Astinapura, Kota Wotu, 92971]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Gallery ===== -->
+    <section id="galeri">
+      <div class="wrap">
+        <h2 class="section-title">Galeri</h2>
+        <div class="gallery">
+          <img src="images/galeri-1.jpg" alt="Foto 1" loading="lazy" />
+          <img src="images/galeri-2.jpg" alt="Foto 2" loading="lazy" />
+          <img src="images/galeri-3.jpg" alt="Foto 3" loading="lazy" />
+          <img src="images/galeri-4.jpg" alt="Foto 4" loading="lazy" />
+          <img src="images/galeri-5.jpg" alt="Foto 5" loading="lazy" />
+          <img src="images/galeri-6.jpg" alt="Foto 6" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Guestbook ===== -->
+    <section id="ucapan">
+      <div class="wrap">
+        <div class="card">
+          <div class="wrap">
+            <h2 class="section-title">Buku Tamu & Ucapan</h2>
+            <form class="guestbook" id="bookForm">
+              <input id="namaUcapan" placeholder="Nama" required />
+              <textarea
+                id="pesanUcapan"
+                rows="3"
+                placeholder="Tulis ucapan terbaikmu..."
+                required
+              ></textarea>
+              <button class="btn primary" type="submit">Kirim Ucapan</button>
+            </form>
+            <div
+              class="guestbook-list"
+              id="listUcapan"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>Terima kasih atas doa dan restunya.</p>
+        <small
+          >&copy; <span id="year"></span> [Budi & Lisa]. Dibuat dengan ❤.</small
+        >
+      </div>
+    </footer>
+
+    <!-- Floating buttons (musik & arah) -->
+    <div class="floating" aria-label="Tombol mengambang">
+      <button class="fab" id="btnMusic" title="Putar/Jeda Musik">
+        &#127925;
+      </button>
+      <a
+        class="fab"
+        id="btnMaps"
+        title="Buka Google Maps"
+        href="https://maps.google.com/?q=-8.409518,115.188916"
+        target="_blank"
+        rel="noopener"
+        >🧭</a
+      >
+    </div>
+
+    <audio
+      id="bgm"
+      src="audio/Lagu Pernikahan Kita.mp3"
+      preload="none"
+      loop
+    ></audio>
+
+    <script>
+      // ====== UTIL ======
+      const $ = (s, el = document) => el.querySelector(s);
+      const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+      // Tahun footer
+      $("#year").textContent = new Date().getFullYear();
+
+      // ====== COUNTDOWN ======
+      // 17 September 2025 jam 10:00 WITA
+      const target = new Date("2025-09-17T10:00:00+08:00");
+      const cd = $("#countdown");
+
+      function tick() {
+        const now = new Date();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          cd.innerHTML = `<div style="text-align:center">
+      <h3>🎉 Acara Sedang Berlangsung 🎉</h3>
+    </div>`;
+          clearInterval(timer);
+          return;
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        cd.innerHTML = `
+    <div class="dd"><b>${d}</b><span>Hari</span></div>
+    <div class="dd"><b>${h}</b><span>Jam</span></div>
+    <div class="dd"><b>${m}</b><span>Menit</span></div>
+    <div class="dd"><b>${s}</b><span>Detik</span></div>
+  `;
+      }
+
+      tick();
+      const timer = setInterval(tick, 1000);
+
+      // ====== RSVP ======
+      $("#rsvpForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const data = Object.fromEntries(fd.entries());
+        alert(
+          "Terima kasih, " +
+            (data.nama || "Tamu") +
+            "! RSVP kamu sudah tercatat.\n\n(Integrasikan ke Formspree atau backend PHP kamu.)"
+        );
+        e.target.reset();
+      });
+
+      // WhatsApp deeplink
+      $("#btnWa").addEventListener("click", () => {
+        const nama = $('#rsvpForm [name="nama"]').value || "-";
+        const jml = $('#rsvpForm [name="jumlah"]').value || "-";
+        const pesan = $('#rsvpForm [name="pesan"]').value || "-";
+        const teks = encodeURIComponent(
+          `Halo, saya ${nama}.\nKonfirmasi hadir: ${jml} orang.\nPesan: ${pesan}`
+        );
+        // Ganti 628xxxx dengan nomor WA panitia
+        window.open("https://wa.me/6281234567890?text=" + teks, "_blank");
+      });
+
+      // ====== Copy rekening ======
+      $$("[data-copy]").forEach((btn) =>
+        btn.addEventListener("click", async () => {
+          const val = btn.getAttribute("data-copy");
+          try {
+            await navigator.clipboard.writeText(val);
+            btn.textContent = "Tersalin!";
+            setTimeout(() => (btn.textContent = "Salin"), 1500);
+          } catch {
+            alert("Salin manual: " + val);
+          }
+        })
+      );
+
+      // ====== Guestbook localStorage (front-end only) ======
+      const LS_KEY = "ucapan-wedding";
+      const renderUcapan = () => {
+        const data = JSON.parse(localStorage.getItem(LS_KEY) || "[]");
+        const list = $("#listUcapan");
+        list.innerHTML = data
+          .map(
+            (x) =>
+              `<div class="ucapan"><b>${x.nama}</b><div>${
+                x.pesan
+              }</div><small style="color:#888">${new Date(
+                x.waktu
+              ).toLocaleString("id-ID")}</small></div>`
+          )
+          .join("");
+      };
+      renderUcapan();
+      $("#bookForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nama = $("#namaUcapan").value.trim();
+        const pesan = $("#pesanUcapan").value.trim();
+        if (!nama || !pesan) return;
+        const data = JSON.parse(localStorage.getItem(LS_KEY) || "[]");
+        data.unshift({ nama, pesan, waktu: Date.now() });
+        localStorage.setItem(LS_KEY, JSON.stringify(data));
+        e.target.reset();
+        renderUcapan();
+      });
+
+      // ====== Musik latar ======
+      const audio = $("#bgm");
+      let playing = false;
+      $("#btnMusic").addEventListener("click", async () => {
+        try {
+          if (!playing) {
+            await audio.play();
+            playing = true;
+          } else {
+            audio.pause();
+            playing = false;
+          }
+        } catch (err) {
+          console.warn(err);
+        }
+      });
+
+      // ====== Intersection fade ======
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("fade-up");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      $$("section .card, section h2, .events .event, .gallery img").forEach(
+        (el) => io.observe(el)
+      );
+    </script>
+  </body>
+</html>
