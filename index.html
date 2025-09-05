@@ -739,22 +739,35 @@
       });
 
       // ====== Musik latar ======
-      const audio = $("#bgm");
-      let playing = false;
-      $("#btnMusic").addEventListener("click", async () => {
-        try {
-          if (!playing) {
-            await audio.play();
-            playing = true;
-          } else {
-            audio.pause();
-            playing = false;
-          }
-        } catch (err) {
-          console.warn(err);
-        }
-      });
+const audio = $("#bgm");
+let playing = false;
 
+// Try to autoplay after first user interaction
+const tryAutoPlay = () => {
+  if (!playing) {
+    audio.play().then(() => {
+      playing = true;
+    }).catch(() => {});
+  }
+  window.removeEventListener("click", tryAutoPlay);
+  window.removeEventListener("touchstart", tryAutoPlay);
+};
+window.addEventListener("click", tryAutoPlay);
+window.addEventListener("touchstart", tryAutoPlay);
+
+$("#btnMusic").addEventListener("click", async () => {
+  try {
+    if (!playing) {
+      await audio.play();
+      playing = true;
+    } else {
+      audio.pause();
+      playing = false;
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+});
       // ====== Intersection fade ======
       const io = new IntersectionObserver(
         (entries) => {
@@ -773,5 +786,6 @@
     </script>
   </body>
 </html>
+
 
 
