@@ -339,6 +339,13 @@
           font-size: 0.9rem;
         }
       }
+
+      /* Tambahkan di <style> */
+      body.cover-open {
+        overflow: hidden;
+        touch-action: none;
+        height: 100vh;
+      }
     </style>
   </head>
   <body>
@@ -641,7 +648,9 @@
         position: fixed;
         z-index: 9999;
         inset: 0;
-        background: url('https://Budboyyyyy.github.io/UndanganNganten/Images/Cover.jpg') center/cover no-repeat, #faf7f2;
+        background: url('https://Budboyyyyy.github.io/UndanganNganten/Images/Cover.jpg')
+            center/cover no-repeat,
+          #faf7f2;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -823,9 +832,13 @@
       // ====== Cover buka undangan ======
       const cover = document.getElementById("coverUndangan");
       const btnBuka = document.getElementById("btnBukaUndangan");
+      // Saat cover tampil, cegah scroll
+      document.body.classList.add("cover-open");
+
       btnBuka.addEventListener("click", async () => {
         cover.style.opacity = "0";
         setTimeout(() => (cover.style.display = "none"), 500);
+        document.body.classList.remove("cover-open"); // Izinkan scroll lagi
         try {
           await audio.play();
           playing = true;
@@ -880,4 +893,3 @@
     </script>
   </body>
 </html>
-
