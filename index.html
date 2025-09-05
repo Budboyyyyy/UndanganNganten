@@ -21,6 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --bg: #faf7f2; /* ganti tema di sini */
@@ -630,6 +634,79 @@
       autoplay
     ></audio>
 
+    <!-- Cover Overlay -->
+    <div
+      id="coverUndangan"
+      style="
+        position: fixed;
+        z-index: 9999;
+        inset: 0;
+        background: url('images/cover.jpg') center/cover no-repeat, #faf7f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 0.5s;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 90vw;
+          text-align: center;
+        "
+      >
+        <h2
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 0 0 12px 0;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.15em;
+            font-weight: 700;
+          "
+        >
+          Undangan Pernikahan
+        </h2>
+        <p
+          style="
+            color: #fff;
+            margin-bottom: 24px;
+            font-family: 'Great Vibes', 'Dancing Script', cursive, serif;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+          "
+        >
+          [Budi] &amp; [Lisa]
+        </p>
+        <button
+          id="btnBukaUndangan"
+          style="
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+          "
+          onmouseover="this.style.background='#fff';this.style.color='#9c6b4e';"
+          onmouseout="this.style.background='transparent';this.style.color='#fff';"
+        >
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+
     <script>
       // ====== UTIL ======
       const $ = (s, el = document) => el.querySelector(s);
@@ -743,6 +820,18 @@
       const audio = $("#bgm");
       let playing = false;
 
+      // ====== Cover buka undangan ======
+      const cover = document.getElementById("coverUndangan");
+      const btnBuka = document.getElementById("btnBukaUndangan");
+      btnBuka.addEventListener("click", async () => {
+        cover.style.opacity = "0";
+        setTimeout(() => (cover.style.display = "none"), 500);
+        try {
+          await audio.play();
+          playing = true;
+        } catch {}
+      });
+
       // Try to autoplay after first user interaction
       const tryAutoPlay = () => {
         if (!playing) {
@@ -791,6 +880,3 @@
     </script>
   </body>
 </html>
-
-
-
