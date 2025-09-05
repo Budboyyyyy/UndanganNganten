@@ -622,9 +622,9 @@
       >
     </div>
 
-    <audio autoplay
+    <audio
       id="bgm"
-      src="https://budboyyyyy.github.io/UndanganNganten/Audio/Lagu Pernikahan Kita.mp3"
+      src="audio/Lagu Pernikahan Kita.mp3"
       preload="none"
       loop
     ></audio>
@@ -739,35 +739,39 @@
       });
 
       // ====== Musik latar ======
-const audio = $("#bgm");
-let playing = false;
+      const audio = $("#bgm");
+      let playing = false;
 
-// Try to autoplay after first user interaction
-const tryAutoPlay = () => {
-  if (!playing) {
-    audio.play().then(() => {
-      playing = true;
-    }).catch(() => {});
-  }
-  window.removeEventListener("click", tryAutoPlay);
-  window.removeEventListener("touchstart", tryAutoPlay);
-};
-window.addEventListener("click", tryAutoPlay);
-window.addEventListener("touchstart", tryAutoPlay);
+      // Try to autoplay after first user interaction
+      const tryAutoPlay = () => {
+        if (!playing) {
+          audio
+            .play()
+            .then(() => {
+              playing = true;
+            })
+            .catch(() => {});
+        }
+        window.removeEventListener("click", tryAutoPlay);
+        window.removeEventListener("touchstart", tryAutoPlay);
+      };
+      window.addEventListener("click", tryAutoPlay);
+      window.addEventListener("touchstart", tryAutoPlay);
 
-$("#btnMusic").addEventListener("click", async () => {
-  try {
-    if (!playing) {
-      await audio.play();
-      playing = true;
-    } else {
-      audio.pause();
-      playing = false;
-    }
-  } catch (err) {
-    console.warn(err);
-  }
-});
+      $("#btnMusic").addEventListener("click", async () => {
+        try {
+          if (!playing) {
+            await audio.play();
+            playing = true;
+          } else {
+            audio.pause();
+            playing = false;
+          }
+        } catch (err) {
+          console.warn(err);
+        }
+      });
+
       // ====== Intersection fade ======
       const io = new IntersectionObserver(
         (entries) => {
@@ -786,6 +790,3 @@ $("#btnMusic").addEventListener("click", async () => {
     </script>
   </body>
 </html>
-
-
-
